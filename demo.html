@@ -1,0 +1,41 @@
+<!docType html>
+<html>
+<head>
+<title></title>   
+<script type="text/javascript" src="VM.js"></script>
+<style>   
+#name {    text-align: center;   }   
+.textRed{    color:red;   }   
+.textGreen{    color:green}
+</style>
+</head>
+<body>   
+    <div id="app">         
+        <h2 class="bigH" v-bind:class="textRed">{{title}}</h2>    
+        <input v-model="name">
+        <h1>{{name}}</h1>
+        <button v-on:click="clickMe">click me!</button>
+    </div>
+</body>
+<script>
+    var selfVue = new VmFrame({
+   el:"app",
+   data:{
+    title:"123",
+    name:'General',
+    textRed:"textRed"
+   },
+   methods:{
+    clickMe:function(){
+     this.name = "General"+Math.random();
+    }
+   },
+   mounted:function(){
+    window.setTimeout(() => {
+     this.title = '你好';
+     this.textRed = "textGreen";
+    }, 1000);
+   }
+  });
+  </script>
+</html>
