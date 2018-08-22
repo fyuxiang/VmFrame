@@ -1,3 +1,11 @@
+/**
+*观察者模式
+*Observer观察者对象
+*Dep资源发布器
+*Watcher订阅者
+*Compiler编译器
+**/
+
 function Observer (obj){
   this.data = obj;
   this.iterator(obj);
